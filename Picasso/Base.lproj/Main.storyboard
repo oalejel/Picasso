@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Picasso" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,79 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxT-XC-ZzE">
+                                <rect key="frame" x="0.0" y="533" width="200" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="Bvd-FC-tmn"/>
+                                </constraints>
+                                <state key="normal" title="RED">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WL5-Ef-JZ0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXt-kb-JZg">
+                                <rect key="frame" x="200" y="533" width="201" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="JQN-gg-pRZ"/>
+                                </constraints>
+                                <state key="normal" title="GRAY">
+                                    <color key="titleColor" red="0.22508285980000001" green="0.22508285980000001" blue="0.22508285980000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zVI-f6-yyy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BS-qD-0KM">
+                                <rect key="frame" x="400" y="533" width="200" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="7pR-Ow-SQV"/>
+                                </constraints>
+                                <state key="normal" title="Turquoise">
+                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EJh-4U-m4f"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="3" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="GYN-aX-IAe">
+                                <rect key="frame" x="18" y="481" width="564" height="31"/>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DxT-XC-ZzE" secondAttribute="bottom" id="1y3-rE-A1i"/>
+                            <constraint firstItem="DxT-XC-ZzE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3N5-K5-4rJ"/>
+                            <constraint firstItem="MXt-kb-JZg" firstAttribute="top" secondItem="GYN-aX-IAe" secondAttribute="bottom" constant="22" id="7af-pR-FZg"/>
+                            <constraint firstItem="MXt-kb-JZg" firstAttribute="width" secondItem="5BS-qD-0KM" secondAttribute="width" id="874-EP-GdQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MXt-kb-JZg" secondAttribute="bottom" id="9bO-Gr-J4A"/>
+                            <constraint firstAttribute="trailing" secondItem="5BS-qD-0KM" secondAttribute="trailing" id="J73-CE-L2I"/>
+                            <constraint firstItem="MXt-kb-JZg" firstAttribute="leading" secondItem="DxT-XC-ZzE" secondAttribute="trailing" id="Z3g-so-T5s"/>
+                            <constraint firstAttribute="trailing" secondItem="GYN-aX-IAe" secondAttribute="trailing" constant="20" id="d0T-Wz-y0s"/>
+                            <constraint firstItem="MXt-kb-JZg" firstAttribute="width" secondItem="DxT-XC-ZzE" secondAttribute="width" id="fDo-Bb-gIP"/>
+                            <constraint firstItem="GYN-aX-IAe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="qOO-FP-mun"/>
+                            <constraint firstItem="5BS-qD-0KM" firstAttribute="leading" secondItem="MXt-kb-JZg" secondAttribute="trailing" constant="-1" id="qrs-gC-jke"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5BS-qD-0KM" secondAttribute="bottom" id="xgr-Yt-CtC"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Wxg-bV-Hc8" appends="YES" id="Eww-3h-l8R"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="radiusSlider" destination="GYN-aX-IAe" id="18H-El-sWe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Wxg-bV-Hc8">
+                    <connections>
+                        <action selector="tap:" destination="BYZ-38-t0r" id="TxN-8N-7hF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="221" y="278"/>
         </scene>
     </scenes>
 </document>
