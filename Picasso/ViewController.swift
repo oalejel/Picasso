@@ -9,25 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var color = UIColor.redColor()
+    var color = UIColor.red
 
     @IBOutlet weak var radiusSlider: UISlider!
 
-    @IBAction func buttonPressed(sender: UIButton) { 
+    @IBAction func buttonPressed(_ sender: UIButton) { 
         color = sender.titleLabel!.textColor
     }
    
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let t = touches.first
-        let loc = t?.locationInView(view)
+        let loc = t?.location(in: view)
         let p = UIBezierPath(arcCenter: loc!, radius: CGFloat(radiusSlider.value), startAngle: 0, endAngle: CGFloat(M_PI * 2.0), clockwise: false)
         let shape = CAShapeLayer()
-        shape.path = p.CGPath
-        shape.fillColor = color.CGColor
+        shape.path = p.cgPath
+        shape.fillColor = color.cgColor
         view.layer.addSublayer(shape)
     }
 
-    @IBAction func tap(sender: AnyObject) {
+    @IBAction func tap(_ sender: AnyObject) {
         for layer in view.layer.sublayers! {
             if layer is CAShapeLayer {
                 layer.removeFromSuperlayer()
